@@ -3,11 +3,12 @@ import pickle
 from lightgbm import LGBMClassifier
 import pandas as pd
 import numpy as np
+from flask_cors import CORS
 
 # creating a Flask app
 app = Flask(__name__)
 app.json.sort_keys = False
-
+CORS(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
